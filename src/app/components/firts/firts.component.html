@@ -1,1 +1,19 @@
-<p>firts works!</p>
+<section>
+  <article>
+    <h3>Interpolação</h3>
+    <!-- variaveis -->
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <!-- expressoes -->
+    <p>Resultado de 1 + 1 é : {{ 1 + 1 }}</p>
+    <!-- utilizando metodos -->
+    <p>Resultado de 1 + 1 não é : {{ 1 + 1 + getValor() }}</p>
+    <!-- expressoes logicas -->
+    <p>Curso de Angular é muito bom: {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+  <article>
+    <h3>Properties Biding</h3>
+    <img src="{{ urlImg }}" />
+    <!-- Propierties biding -->
+    <img [src]="urlImg" />
+  </article>
+</section>
