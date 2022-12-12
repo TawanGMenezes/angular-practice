@@ -16,4 +16,51 @@
     <!-- Propierties biding -->
     <img [src]="urlImg" />
   </article>
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      <select #classe (change)="0">
+        <option value="alert-success">Success</option>
+        <option value="alert-danger">Danger</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-info">Info</option>
+      </select>
+    </div>
+    <div>
+      <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+        A simple success alert—check it out!
+      </div>
+      <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+        A simple danger alert—check it out!
+      </div>
+      <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+        A simple warning alert—check it out!
+      </div>
+      <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+        A simple info alert—check it out!
+      </div>
+    </div>
+    <div class="alert {{classe.value}}">
+      Texto colorido conforme o valor do combobox
+    </div>
+    <div class="alert {{classe.value}}" role="alert" [style.display]="classe.value == 'alert-danger'? 'block': 'none'">
+      Texto irá aparece apenas em caso de erro
+    </div>
+  </article>
+  <article>
+    <h3>Event Biding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="clicked()">CLIQUE</button>
+    </div>
+    <br>
+    <input #textInput type="text" (keyup)="valorAtual($event)" (keyup.enter)="valorNovo(textInput.value)">
+    <p>
+      Valor Atual : {{valor}}
+    </p>
+    <p>Valor Novo: {{novo}}</p>
+    <br>
+    <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
+      Passe o mouse
+    </span>
+  </article>
 </section>

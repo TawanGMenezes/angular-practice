@@ -9,7 +9,10 @@ export class FirtsComponent {
   url: string = 'http://loiane.com';
   cursoAngular: boolean = true;
   urlImg: string = 'http://lorempixel.com.br/400/200/nature';
-  constructor() {}
+  valor: string = ''
+  novo: string = ''
+  isMouseOver: boolean = false
+  constructor() { }
 
   getValor() {
     return 1;
@@ -17,5 +20,21 @@ export class FirtsComponent {
 
   getCurtirCurso() {
     return true;
+  }
+
+  clicked() {
+    alert('CLICOU')
+  }
+
+  valorAtual(event: KeyboardEvent) {
+    this.valor = (<HTMLInputElement>event.target).value
+  }
+
+  valorNovo(valor: string) {
+    this.novo = valor
+  }
+
+  onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver
   }
 }
